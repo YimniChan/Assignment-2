@@ -4,7 +4,7 @@
 //(parameter)goes to the {function()}
 
 const mydata= [10, 15, 25, 30, 40];
-//const myNums= [5, 2, 7, 9, 8];
+
 console.log("foreach(): each element in array divided by 2");
 const myEach = (nums, callback)=>{
   for(let i=0;i<nums.length; i++){
@@ -290,6 +290,7 @@ console.log(arrayValue);
 // → [5, 4, 3, 2, 1]
 
 console.log("------------------------\nA List");
+
 const arrayToList = (array)=>{
   const list = {value: null, rest:null};
   list.value = array[0];
@@ -306,7 +307,7 @@ const arrayToList = (array)=>{
 const listToArray =(list)=>{
   const array = [];
   let li=list;
-  while(li){  //li still exist, keep runing
+  while(li){//li still exist, keep runing
     array.push(li.value);
     li = li.rest;
     }
@@ -321,15 +322,12 @@ const prepend =(v,r)=>{
 }
 
 const nth =(list, num)=>{
-  let index;
   let position=0;
   for (let i = list; i; i = i.rest){
     if (position===num){
-      index = i.value;
-      break;}
+      return i.value;}
     else  position++;
   }
-  return index;
 }
 
 console.log(arrayToList([10, 20]));
@@ -357,15 +355,15 @@ const deepEqual = (value1, value2 ) =>{
       return false;
     }
     for(const key in value1){
-      if (value2.hasOwnProperty(key)){ 
-		//if value2 have same key as value1
+      if (value2.hasOwnProperty(key)){  
+        //if value2 have same key as value1
         //Deep comparison of the value inside values are they equal each other, or not.
         //if not, return false
         if (deepEqual(value1[key], value2[key]) == false)
           return false;
       }
-      else //if value2 do not have same key as value1, return false
-      return false;
+      else
+      return false;//if value2 do not have same key as value1, return false
     }
     return true;
   }
@@ -380,3 +378,25 @@ console.log(deepEqual(obj, {here: 1, object: 2}));
 // → false
 console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 // → true
+
+
+console.log("-----------------------------\n");
+console.log("Miscellaneous Problems (1)");
+const myNums= [5, 2, 0, 9, 8, 0, 1, 0, 3, 12];
+
+const moveZeros = (array)=> {
+  let count=0;
+  for(let i=0;i<array.length;i++){  
+    if(array[i]!=0){
+      array[count]=array[i];
+      count+=1;
+    }
+  }
+  for(let i=count;i<array.length;i++){
+   array[count]=0;
+   count+=1;
+  }
+  return array;
+}
+console.log(moveZeros(myNums));
+
