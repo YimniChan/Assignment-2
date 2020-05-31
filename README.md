@@ -19,3 +19,7 @@ BONUS methods<br/>
   ●	Reversing an Array<br/>
   ●	A List<br/>
   ●	Deep Comparison<br/>
+ 
+Miscellaneous Problem<br/>
+  ●	funtion moveZero<br/>
+    move all the zero value in the back of the array, without create a new array.
