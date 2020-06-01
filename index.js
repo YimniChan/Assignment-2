@@ -41,7 +41,7 @@ console.log("\nfilter():return an array that elements grate than 20 in mydata ar
 const myFilter = (nums, callback)=>{
   const arrayfilter=[];
   for(let i=0;i<nums.length; i++){
-    if (callback(nums[i])==1){
+    if (callback(nums[i])===1){
       arrayfilter.push( nums[i]);}
   }
   return arrayfilter;
@@ -68,7 +68,7 @@ const mySome = (nums, callback)=>{
 } 
 //callback condition
 const someNeed=(num)=>{
-  if (num%3==0) {return true;}
+  if (num%3===0) {return true;}
   else {return false;}
 }
 console.log(mySome(mydata,someNeed));
@@ -80,14 +80,14 @@ console.log(mySome(mydata,someNeed));
 console.log("\nevery(): check all elements in mydata array are even");
 const myEvery = (nums, callback)=>{
   for(let i=0;i<nums.length; i++){
-    if (callback(nums[i])==false){
+    if (callback(nums[i])===false){
       return false;}
   }
   return true;
 } 
 //callback condition
 const everyNeed=(num)=>{
-  if (num%2==0) {return true;}
+  if (num%2===0) {return true;}
   else {return false;}
 }
 console.log(myEvery(mydata,everyNeed));
@@ -116,7 +116,7 @@ const target='rat';
 console.log("\nincludes(): check any element in array contain target element, return boolean");
 const myIncludes = (word)=>{
   for(let i=0;i<word.length; i++){
-    if(word[i]==target)
+    if(word[i]===target)
     return true;
   }
   return false;
@@ -132,7 +132,7 @@ console.log("\nindexOf(): check any element in array contain target element. If 
 const targetNum = 18;
 const myIndexOf = (nums)=>{
   for(let i=0;i<nums.length; i++){
-    if(nums[i]==targetNum)
+    if(nums[i]===targetNum)
     return i;
   }
   return -1;
@@ -167,7 +167,7 @@ const myList = ['a', 'c', 'd','e', 'f', 'c','a', 'a', 'd'];
 const myUnshift = (list,targatindex) =>{
   let temp =-1;
   for(let i=list.length-1;i>=0;i--){
-    if(list[i]==targatindex && i>temp){
+    if(list[i]===targatindex && i>temp){
       temp = i;}
   }
   return temp;
@@ -347,11 +347,11 @@ const deepEqual = (value1, value2 ) =>{
   if (value1===value2){
     return true;
   }
-  else if(typeof value1 == typeof value2 && value1 !=null && value2 !=null)
+  else if(typeof value1 === typeof value2 && value1 !==null && value2 !==null)
   { // compare the content inside the values one by one,
     //any element not match will return false;
     //otherwsie return true;
-    if (Object.keys(value1).length != Object.keys(value2).length){
+    if (Object.keys(value1).length !== Object.keys(value2).length){
       return false;
     }
     for(const key in value1){
@@ -387,7 +387,7 @@ const myNums= [5, 2, 0, 9, 8, 0, 1, 0, 3, 12];
 const moveZeros = (array)=> {
   let count=0;
   for(let i=0;i<array.length;i++){  
-    if(array[i]!=0){
+    if(array[i]!==0){
       array[count]=array[i];
       count+=1;
     }
