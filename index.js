@@ -168,6 +168,7 @@ const myList = ['a', 'c', 'd','e', 'f', 'c','a', 'a', 'd'];
 const myUnshift = (list,targatindex) =>{
   let temp =-1;
   for(let i=list.length-1;i>=0;i--){
+	  
     if(list[i]===targatindex && i>temp){
       temp = i;}
   }
