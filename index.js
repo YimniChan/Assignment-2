@@ -11,6 +11,7 @@ const myEach = (nums, callback)=>{
     callback(nums[i]);
   }
 }
+
 //callback condition
 const dividedByTwo=(num)=>console.log(num/2);
 myEach(mydata, dividedByTwo);
